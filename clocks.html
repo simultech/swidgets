@@ -15,9 +15,12 @@
     </style>
 </head>
 <body>
-    <canvas id="wallpaperCanvas"></canvas>
+    <canvas id="wallpaperCanvas" onclick="increaseCount()"></canvas>
     <script>
-        let numclocks = 1;
+        window.numclocks = 1;
+        function increaseCount() {
+            window.numclocks += 1;
+        }
         // based on https://github.com/sourceduty/World_Clocks/blob/main/v2.0/World_Clocks_AM_PM.html
         const timeZones = {
             'America/New_York': 'NEW YORK',
@@ -105,7 +108,7 @@
 
             let count = 0;
             Object.entries(timeZones).forEach(([timeZone, city]) => {
-                if (count < numclocks) {
+                if (count < window.numclocks) {
                     drawClock(xPosition, yPosition, clockRadius, city, timeZone);
                 }
                 xPosition += clockSpacing;
