@@ -8,6 +8,7 @@
         body {
             margin: 0;
             overflow: hidden;
+            background: red;
         }
         canvas {
             display: block;
@@ -92,7 +93,7 @@
         }
 
         function drawClocks() {
-            ctx.fillStyle = '#000000';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             const clockRadius = Math.min(canvas.width, canvas.height) / 10;
